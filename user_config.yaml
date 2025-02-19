@@ -1,0 +1,50 @@
+# Configuration générale de l'expérience MEG
+experiment:
+  name: "Nom de l'expérience"
+  subject_id: "S001"
+  session: "01"
+  run: "01"
+  experimenter: "Nom du chercheur"
+  description: "Description de l'expérience MEG"
+
+# Matériel utilisé
+hardware:
+  meg_system: "Elekta Neuromag"
+  eeg_system: "BrainProducts ActiChamp"  # Mettre "None" si EEG non utilisé
+  stimulus_pc: "Dell Precision 7920"
+  photodiode_channel: "MISC006"
+  trigger_channels: ["STI001", "STI004", "STI012", "STI013", "STI014", "STI015"]
+
+# Paramètres de l'acquisition
+acquisition:
+  sampling_rate: 1000  # Fréquence d'échantillonnage en Hz
+  highpass: 0.1  # Filtrage passe-haut en Hz
+  lowpass: 40  # Filtrage passe-bas en Hz
+  notch_filter: [50, 100]  # Filtrage notch pour supprimer les interférences secteur
+  t_min: -0.2  # Temps avant stimulus en secondes
+  t_max: 0.8  # Temps après stimulus en secondes
+
+# Paramètres de la présentation des stimuli
+stimuli:
+  refresh_rate: 60  # Fréquence de rafraîchissement de l’écran (Hz)
+  cue_duration: 0.5  # Durée du signal cue (en secondes)
+  feedback_duration: 1.0  # Durée du feedback (en secondes)
+  jitter_range: [0.5, 1.5]  # Jitter entre essais (en secondes)
+
+# Mapping des événements
+events:
+  cue: "STI001"
+  response: ["STI012", "STI013", "STI014", "STI015"]
+  feedback: "STI003"
+  photodiode_threshold: 0.5  # Seuil pour détecter les changements avec la photodiode
+
+# Sauvegarde et logs
+output:
+  save_path: "/home/user/data/meg_experiment"
+  log_file: "experiment_log.txt"
+  overwrite: False  # Mettre à True pour écraser les fichiers existants
+
+# Options avancées
+debug:
+  verbose: True  # Activer les messages de debug
+  save_raw_data: True  # Sauvegarder les signaux bruts
