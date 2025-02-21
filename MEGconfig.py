@@ -12,7 +12,7 @@ HARDWARE = ['response_buttons',
 #TODO : se renseigner sur ce qu'ils font à l'ICM : contacter l'ingé qui a surement eu le temps de faire ça ?
 #de quelle classe faire hériter ? expyriment/ Psychopy ? autres (mro à configurer) 
 # ... non une classe intermédiaire c'est mieux.
-class meg_neurospin_config(): 
+class meg_neurospin_config(): #Heritage ?
     ''' 
     Robust hardware configuration setup for the neurospin meg,
     with a great amount of verbosity, to be usefull to the user just before to start the session.
@@ -27,12 +27,15 @@ class meg_neurospin_config():
     '''  
 
     def __init__(self, config):
-        self.expy = expy
+        self.expy = expy # deal with the best way to do it ? what is necessary or not in term of expy integration ?
         self.cfg = config
         # récupérer les configs ports parallèles et autres hardwares qui peut changer.
         self._load_config()
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
+        if self.cfg["test_raw"] :
+            raw_test_test_raw()
+           
     
     
     def _load_config(self):
@@ -49,11 +52,3 @@ class meg_neurospin_config():
         # SOFTWARE
         # data quality assessement
         # check de l'environnement python
-     
-   
-    def quick_fif_checking(self): # voir avec Anne et Fosca ce qu'il faudrait incorporer
-        pass
-        #load the .fif from the meg stim
-        #run a battery of test (based on the user config file)
-        
-    
