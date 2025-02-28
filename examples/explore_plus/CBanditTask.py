@@ -1,43 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Jul 18 15:54:22 2021
-    
-
-
-*****************
-NB: BEFORE RUNNING!!! 
-* USE ACTUAL SEQUENCES
-* TURN OFF DEV MODE, ETC
-*****************
-
-* ADD RECORDING OF 
-    - wrong presses on forced trials
-    - anticipatory presses 
-
-@author: apaunov, hippolyteD456
-"""
-
 
 import yaml
 
-import time 
-import os
 import numpy as np
 import pandas as pd
-import pickle
-
 import expyriment as expy  #control, design, misc, stimuli, io
 from utils.CBandit_parameters import *
 from utils.rand_counter import *
-from utils.ratings import rating_block, MEG_rating_block
-import utils.generate_sequence as gs 
-
+from utils.ratings import MEG_rating_block
 from utils.seq_gen import SeqGen
 from utils.saver import Saver
 from utils.rand_counter import rd_ct
 from utils.feedback import Feedback as FB
-from utils.parallel_ports import MEG_ports
+
+
+
+with open('./meg-config/config/hardware.yaml', 'r') as hardware:
+    #TODO...
+    
 
 
 # =============================================================================
@@ -165,22 +146,15 @@ exp.add_block(block)
 # RUN EXPERIMENT
 # =============================================================================
 
-#TODO check this line for MEG initiliazation___________________
+
 expy.stimuli.TextLine("Waiting for trigger...").present()
-if IS_FMRI:
-    exp.keyboard.read_out_buffered_keys() 
-    key, rt = trigger.wait_char(SCAN_TRIGGER)
 
-elif IS_MEG:
-    trigger.wait_char(SCAN_TRIGGER)
-    print('sending on parallel port the starting')
-    MEGport.send(data = 255)
-    exp.clock.wait(durationTriggers) #TODO check if necessary
-    MEGport.send(data = 0)
+trigger.wait_char(SCAN_TRIGGER)
+print('sending on parallel port the starting')
+MEGport.send(data = 255)
+exp.clock.wait(durationTriggers) #TODO check if necessary
+MEGport.send(data = 0)
     
-elif IS_BEHAV:
-    trigger.wait_char(SCAN_TRIGGER)
-
 t_trigger = exp.clock.time #TODO understand that 
 exp.clock.reset_stopwatch() #reset timer for trial timing
 exp_start_time = exp.clock.stopwatch_time # get the start time for checking total session duration
@@ -209,11 +183,11 @@ for trial, trial_num in zip(block.trials, range(N_TRIALS)):
     trial.stimuli[0].present() 
     # Get time at start of trial
     trial_start = exp.clock.stopwatch_time
-    if IS_MEG:
-        print('ONSET sent')
-        MEGport.send(data = 1)                ## 1STIM 
-        exp.clock.wait(durationTriggers)
-        MEGport.send(data = 0)
+
+    print('ONSET sent')
+    MEGport.send(data = 1)                ## 1STIM 
+    exp.clock.wait(durationTriggers)
+    MEGport.send(data = 0)
    
     # Wait for response (up to max cue duration)
     free_forced = block_inputs['forced'][trial_num]
@@ -226,21 +200,14 @@ for trial, trial_num in zip(block.trials, range(N_TRIALS)):
     else:
         raise KeyError
     
-    if IS_FMRI:
-        key, rt = exp.keyboard.wait_char(available_keys, duration= CUE_DUR*1000)
-    elif IS_MEG:
-        key, rt = response_meg.wait(duration=2000) ## 2RESPONSE
-        if key not in available_keys:
-            key,rt = None, None
-    elif IS_BEHAV:
-        key, rt = exp.keyboard.wait_char(available_keys)
-    else:
-        raise KeyError 
+   
+
+    key, rt = response_meg.wait(duration=2000) ## 2RESPONSE
+    if key not in available_keys:
+        key,rt = None, None
     
-    print("OOOOOOOOOOH", rt, key)
-    # Get arm choice corresponding to key press
+    
     arm_choice = rd_ct.get_arm_choice(key, arm_id_this_sess)
-    # Get color corresponding ot the choice
     color_choice = rd_ct.get_color_choice(key, color_order_this_sess)
 
     
@@ -288,16 +255,14 @@ for trial, trial_num in zip(block.trials, range(N_TRIALS)):
     frameOn_start = exp.clock.stopwatch_time
     
     
-    if IS_FMRI:
-        exp.clock.wait((FRAME_OFF_DUR + CUE_DUR)*1000 - rt)
-    if IS_MEG:
-        print('FRAMEON sent')
-        MEGport.send(data = 2)                 ## 3FRAMEON 
-        exp.clock.wait(durationTriggers)
-        MEGport.send(data = 0)
-        exp.clock.wait((ISI - FRAME_ON_DUR)*1000)
-    if IS_BEHAV:
-        exp.clock.wait((FRAME_OFF_DUR + CUE_DUR)*1000 - rt)
+    
+  
+    print('FRAMEON sent')
+    MEGport.send(data = 2)                 ## 3FRAMEON 
+    exp.clock.wait(durationTriggers)
+    MEGport.send(data = 0)
+    exp.clock.wait((ISI - FRAME_ON_DUR)*1000)
+
     
     # Show frame again to signal outcome time
     if key == LEFT_KEY:
@@ -359,24 +324,18 @@ for trial, trial_num in zip(block.trials, range(N_TRIALS)):
 
     
     ITI_start = exp.clock.stopwatch_time  # exp_time_elapsed = exp.clock.stopwatch_time - exp_start_time
-    if IS_MEG:
-        print('ITI sent')
-        MEGport.send(data = 8)                     ## 5ITI_start
-        exp.clock.wait(durationTriggers)
-        MEGport.send(data = 0)
+    
+    print('ITI sent')
+    MEGport.send(data = 8)                     ## 5ITI_start
+    exp.clock.wait(durationTriggers)
+    MEGport.send(data = 0)
     exp.clock.wait(ITI[trial_num] * 1000) 
     
     # -------------------------------------------------------------------------
     # RATINGS (once ITI is over)
     # -------------------------------------------------------------------------
-    if block_inputs['isQ'][trial_num] == 1:
-        if IS_MEG: 
-            print('MEG mode')
-            ## TODO [in the rating function] send TTL pulse for MEG (except if photodiode is used... change the stimuli) 
-            keyQ1_val, rtQ1_val, keyQ1_conf, rtQ1_conf, keyQ2_val, rtQ2_val, keyQ2_conf, rtQ2_conf, stimVal1, stimConf1, stimVal2, stimConf2, startQuestion = MEG_rating_block(exp, cueLeft, cueRight, whichCue, qsTitle, MEGport, response_meg)
-        else:
-            print('Normal mode')
-            keyQ1_val, rtQ1_val, keyQ1_conf, rtQ1_conf, keyQ2_val, rtQ2_val, keyQ2_conf, rtQ2_conf = rating_block(exp, cueLeft, cueRight, whichCue, qsTitle)
+    if block_inputs['isQ'][trial_num] == 1:   
+        keyQ1_val, rtQ1_val, keyQ1_conf, rtQ1_conf, keyQ2_val, rtQ2_val, keyQ2_conf, rtQ2_conf, stimVal1, stimConf1, stimVal2, stimConf2, startQuestion = MEG_rating_block(exp, cueLeft, cueRight, whichCue, qsTitle, MEGport, response_meg)
         
     else:
         keyQ1_val = 0
@@ -396,8 +355,6 @@ for trial, trial_num in zip(block.trials, range(N_TRIALS)):
         startQuestion = 0
     
     # TODO move it to saving class
-    if not IS_MEG:
-        startQuestion, stimVal1, stimConf1, stimVal2, stimConf2 = 0, 0, 0, 0, 0
     data_add = pd.DataFrame({'BlockID': saver.block_name,'TrialID': trial.id,
                             'arm_choice': arm_choice,'color_choice': color_choice, 'Key': key, 'key_miss': key_miss, 'reward': reward,  
                             'keyQ1_val': keyQ1_val, 'keyQ1_conf': keyQ1_conf, 'keyQ2_val': keyQ2_val, 'keyQ2_conf': keyQ2_conf,

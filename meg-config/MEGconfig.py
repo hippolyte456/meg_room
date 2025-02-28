@@ -9,7 +9,7 @@ import pytest
 import mne
 import yaml
 import expyriment as expy
-
+from parallel_ports import MEG_ports
 
 
 #TODO : se renseigner sur ce qu'ils font à l'ICM : contacter l'ingé qui a surement eu le temps de faire ça ?
@@ -24,11 +24,13 @@ class meg_neurospin_config(): #Heritage ?
 
     def __init__(self, config):
         self.expy = expy # deal with the best way to do it ? what is necessary or not in term of expy integration ?
+        self.parports = MEG_ports()
         self.cfg = config
         # récupérer les configs ports parallèles et autres hardwares qui peut changer.
         self._load_config()
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
+        
            
     
     def _load_config(self):
