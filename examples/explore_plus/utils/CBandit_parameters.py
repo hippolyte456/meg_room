@@ -8,49 +8,10 @@ Parameters for the curious bandit task.
 @author: apaunov
 """
 
-####################### TODO !!! ##############################
-#check simmetry of the STI in parallel port
-#check size 
-#check continuous hpi recording or not 
-#why NA in STI
-#motor responses records
-#check x,y eyelink record (record also an independant eyetracker file)
-#add script for projector config 
-#timing fix delay because of sending event to MEG (or code it with multithreading)
-#n e pas utiliser le STI 8 pour les stim car en conflit avec les boutons reponses + expe Theo (pas utiliser sti1O2 sur la MEG)
-# check quand il y a les mauvais boutons réponses
-
-
 
 from expyriment import misc, io
 import random
 
-# =============================================================================
-# HARDWARE
-# =============================================================================
-IS_BEHAV = False
-IS_FMRI = False  #activate the max time answer and display red cross for missed trials 
-IS_MEG = True
-
-IS_KEYBOARD = False
-IS_FORP = False 
-IS_MEGkeys = True
-
-IS_EYELINK = False             
-
-# exactly one of IS_BEHAV, IS_FMRI, IS_MEG to be True same for IS_KEYBOARD, IS_FORP, IS_MEGkeys
-if sum([IS_BEHAV, IS_FMRI, IS_MEG]) != 1:
-    raise ValueError("Please select exactly one of IS_BEHAV, IS_FMRI, IS_MEG to be True")
-if sum([IS_KEYBOARD, IS_FORP, IS_MEGkeys]) != 1:
-    raise ValueError("Please select exactly one of IS_KEYBOARD, IS_FORP, IS_MEGkeys to be True")
-
-# =============================================================================
-# SET MODE
-# =============================================================================
-DEV_MODE = False
-MANUAL_MODE = False #TODO call a function which allows user to set more parameters, but with more knowledge of the task
-CALL_EXPY_DEV_MODE = False
-MINI_MODE = False
 
 # =============================================================================
 # CONTROL STIMULUS SIZE
@@ -77,46 +38,19 @@ HIGH_SD = 15
 # =============================================================================
 # MEG port
 # =============================================================================
-if IS_MEG:
-   
-    # MEGport = io.ParallelPort(address = "/dev/parport1")
-    receive_port1 = '/dev/parport0' 
-    receive_port2 = '/dev/parport1' 
-    receive_port3 = '/dev/parport3'
-    durationTriggers = 10 # 300 ms
+
+
 # =============================================================================
 # TIMING
 # =============================================================================
+CUE_DUR = 2 
+ISI = 2
+FRAME_OFF_DUR = 0.75
+FRAME_ON_DUR = ISI - FRAME_OFF_DUR
+OUT_DUR = 1
+meanITI = 2
+eITI = 0
 
-
-#Decision making
-if IS_BEHAV:
-    CUE_DUR = 2 
-    ISI = 1 
-    FRAME_OFF_DUR = 0.75
-    FRAME_ON_DUR = ISI - FRAME_OFF_DUR
-    OUT_DUR = 2
-    meanITI = 1
-    eITI = 0
-
-if IS_FMRI:
-    CUE_DUR = 2 
-    ISI = 1 
-    FRAME_OFF_DUR = 0.75
-    FRAME_ON_DUR = ISI - FRAME_OFF_DUR
-    OUT_DUR = 2
-    meanITI = 3.5 # 3.5 for mri 
-    eITI = 1.5 # 1.5 for mri
-
-if IS_MEG:
-    CUE_DUR = 2 
-    ISI = 2
-    FRAME_OFF_DUR = 0.75
-    FRAME_ON_DUR = ISI - FRAME_OFF_DUR
-    OUT_DUR = 1
-    meanITI = 2
-    eITI = 0
-    
 
 def generate_values(n,m,e):
     '''
@@ -143,10 +77,8 @@ N_Q = 4 # number of questions in a set
 Q_PERIOD_DUR = (Q_DUR  + Q_PAD) * N_Q + (Q_GAP*2) # ie 16 sec total
 TOT_TIME_Q = 16 - 2*Q_GAP  #TODO
 
-if IS_FMRI:
-    FIX_DUR = 12.5
-else:
-    FIX_DUR = 2.5
+
+FIX_DUR = 2.5
     
 # =============================================================================
 # VARIATION OF THE TASK
@@ -159,54 +91,24 @@ VALUES = ['20','40','60','80']
 # =============================================================================
 # KEYS
 # =============================================================================
-#forb device, define from thumb to pinky
-SCAN_TRIGGER = "t"
 
-if IS_KEYBOARD:
-    #decision ACTION
-    LEFT_KEY = "f"
-    RIGHT_KEY = "j"
-    KEYS_CHOICE = [LEFT_KEY, RIGHT_KEY]
-    
-    #Q1 ACTION
-    KEYS_VAL = ['f','g','h','j']
-    #Q2 ACTION
-    KEYS_CONF = ['f','g','h','j']
-    
-if IS_FORP: #when 4 options
-    thumb = 'b'
-    index = 'y'
-    middle = 'g'
-    ring = 'r'
-    pinky = ','
-    LEFT_KEY = index
-    RIGHT_KEY = pinky
-    KEYS_CHOICE = [LEFT_KEY, RIGHT_KEY]
-    KEYS_VAL = [index, middle, ring, pinky]
-    KEYS_CONF = [index, middle, ring, pinky]
 
-if IS_MEGkeys:  #use the right hand manette
-    # port1_17 : droite bleu
-    # port2_24 : droite jaune
-    # port2_20 : droite vert
-    # port2_18 : droite rouge
-    Left = 'port1_4'
-    LeftMiddle = 'port1_8'
-    RightMiddle = 'port2_8'
-    Right = 'port1_1'
-    LEFT_KEY = Left
-    RIGHT_KEY = Right
-    KEYS_CHOICE = [LEFT_KEY, RIGHT_KEY]
-    KEYS_VAL = [Left, LeftMiddle, RightMiddle, Right]
-    KEYS_CONF = [Left, LeftMiddle, RightMiddle, Right]
-    
+Left = 'port1_4'
+LeftMiddle = 'port1_8'
+RightMiddle = 'port2_8'
+Right = 'port1_1'
+LEFT_KEY = Left
+RIGHT_KEY = Right
+KEYS_CHOICE = [LEFT_KEY, RIGHT_KEY]
+KEYS_VAL = [Left, LeftMiddle, RightMiddle, Right]
+KEYS_CONF = [Left, LeftMiddle, RightMiddle, Right]
+
 
 # =============================================================================
 # SIZES
 # =============================================================================
 
 abc = 0.4
-meg_pos = -300
 stim_sizes = {'stim_frame_rad': 75*abc, 
         'stim_rad': 60*abc, 
         'position': 120*abc, 
@@ -235,7 +137,7 @@ POS_RATE_PROMPT = stim_sizes['position']
 POS_RATE_OPTIONS = -stim_sizes['position']
 POS_RATE_OPTIONS_VERT = -stim_sizes['position']
 
-POS_RATE_OPTIONS_ENDS = [-stim_sizes['position'] - stim_sizes['stim_rad']*8, #TODO parametriser en fonction du nombre de stimuli
+POS_RATE_OPTIONS_ENDS = [-stim_sizes['position'] - stim_sizes['stim_rad']*8,
                             stim_sizes['position'] + stim_sizes['stim_rad']*8]
 
 RATE_SIZE = stim_sizes['stim_rad']*1.5
@@ -267,11 +169,7 @@ MISS_FIX_COLOR = misc.constants.C_RED
 # =============================================================================
 # FONTS
 # =============================================================================
-EXP_FONT = "Arial"
-if IS_BIG:
-    mult = MULT
-else:
-    mult = 1
+mult = 1
 
 
 # =============================================================================
@@ -281,13 +179,10 @@ NOPT = 2
 HORIZON = 96
 LATENT_LEVELS = LEVELS
 SD_LEVELS = [LOW_SD, HIGH_SD] #CAUTION : redifinition of sd_levels in the class
-if IS_FMRI:
-    NbQForced = 2
-    NbQFree = 2
-else:
-    NbQForced = 2
-    NbQFree = 4
-Min_Qspacing = 9 #TODO find the function that goes right for all number of questions
+
+NbQForced = 2
+NbQFree = 4
+Min_Qspacing = 9
 VOL = 1/24
 
 # Options parameters

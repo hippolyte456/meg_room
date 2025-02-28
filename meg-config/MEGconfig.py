@@ -4,6 +4,7 @@ TODO cahier des charges à définir avec Fosca
 - Robustness : 0 erreur possible sur les envois et receptions de trigger etc // moins grave sur les checks et fonctinnalités supplémentaire.
 '''
 
+
 import pytest
 import mne
 import yaml

@@ -21,7 +21,6 @@ NB: BEFORE RUNNING!!!
 
 import yaml
 
-
 import time 
 import os
 import numpy as np
@@ -44,7 +43,6 @@ from utils.parallel_ports import MEG_ports
 # =============================================================================
 # INITIALISATION
 # =============================================================================
-#Initializer.init() #TODO initializer.dev_mode and irm_specificity #initializer should be a parent class for both rd_ct, seq_gen, saver etc ??
 expy.control.defaults.window_mode = False
 
 exp = expy.design.Experiment(name="Curious Bandit Task",
@@ -60,10 +58,10 @@ trigger = exp.keyboard  # USED FOR BOTH LAPTOP AND KEYBOARD
 expy.control.start(skip_ready_screen=True)
 saver = Saver(exp)
 
-if IS_MEG:
-    response_meg = MEG_ports(exp, receive_port1, receive_port2, receive_port3)
-    MEGport = response_meg.port2
-    
+
+response_meg = MEG_ports(exp, receive_port1, receive_port2, receive_port3)
+MEGport = response_meg.port2
+
 
 # =============================================================================
 # TASK DESIGN: SET UP STIMULI
@@ -71,9 +69,9 @@ if IS_MEG:
 
 #order of COLORS, QUESTIONS, ARMS
 left_color, right_color = rd_ct.set_lf_color()
-color_order_this_sess = rd_ct.set_color_order(left_color) #quelle difference avec set_lf_color ? TODO merge with set_lf_color
+color_order_this_sess = rd_ct.set_color_order(left_color) 
 whichCue = rd_ct.set_cue_order()
-arm_id_this_sess = rd_ct.set_arm_id(0) #arm_id_this_sess = rd_ct.set_arm_id(saver.subject_idx)
+arm_id_this_sess = rd_ct.set_arm_id(0)
 
 
 # NORMAL TRIALS (and initial / final)
