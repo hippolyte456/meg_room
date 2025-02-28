@@ -1,17 +1,17 @@
+'''
+TODO cahier des charges à définir avec Fosca
+- It has to reduce the possibility of mistakes while letting access to all possible experiments configurations for the user.
+- Robustness : 0 erreur possible sur les envois et receptions de trigger etc // moins grave sur les checks et fonctinnalités supplémentaire.
+'''
+
 import pytest
 import mne
 import yaml
 import expyriment as expy
 
 
-HARDWARE = ['response_buttons', 
-            'audio', 
-            'eyelink',
-]
 
 #TODO : se renseigner sur ce qu'ils font à l'ICM : contacter l'ingé qui a surement eu le temps de faire ça ?
-#de quelle classe faire hériter ? expyriment/ Psychopy ? autres (mro à configurer) 
-# ... non une classe intermédiaire c'est mieux.
 class meg_neurospin_config(): #Heritage ?
     ''' 
     Robust hardware configuration setup for the neurospin meg,
@@ -19,11 +19,6 @@ class meg_neurospin_config(): #Heritage ?
     
     This class has to be used by the meg experimenters. 
     It is an intermediary class of expyriments with the specific need / hardware setup of neurospin and requires a config file (yaml?)
-    
-    
-    TODO cahier des charges à définir avec Fosca
-    - It has to reduce the possibility of mistakes while letting access to all possible experiments configurations for the user.
-    - Robustness : 0 erreur possible sur les envois et receptions de trigger etc // moins grave sur les checks et fonctinnalités supplémentaire.
     '''  
 
     def __init__(self, config):
@@ -33,10 +28,7 @@ class meg_neurospin_config(): #Heritage ?
         self._load_config()
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
-        if self.cfg["test_raw"] :
-            raw_test_test_raw()
            
-    
     
     def _load_config(self):
         pass

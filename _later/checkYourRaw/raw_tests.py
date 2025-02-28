@@ -6,4 +6,6 @@ def quick_fif_checking(self): # voir avec Anne et Fosca ce qu'il faudrait incorp
         #load the .fif from the meg stim
         #run a battery of test (based on the user config file)
         
-    
+
+if self.cfg["test_raw"] :
+            raw_test_test_raw()

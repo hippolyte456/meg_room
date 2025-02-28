@@ -1,0 +1,64 @@
+'''
+This file contains the configuration of the hardware used in the lab.
+Contains all the information potentially needed in the user experiment code file.
+TODO --> this config could be updated autamtically ? (hard to do... but partially feasible)
+''' 
+
+
+parallel_ports: 
+  port1: "/dev/parport0"
+  port2: "/dev/parport1"
+  port3: "/dev/parport2"
+  port4: "/dev/parport3" 
+# receive_port1 = '/dev/parport0' # receive_port2 = '/dev/parport1' # receive_port3 = '/dev/parport3' #TODO definir les correspondances (et en hexadécimal aussi "0x0378"?)
+
+
+response_button:
+  used_port: {parallel_ports.port1, parallel_ports.port2}
+  labels: {"l_red", "l_yellow", "lgreen", "l_red","r_red", "r_yellow", "r_green", "r_red"}
+  ttl: {"STI012", "STI013", "STI014", "STI015","STI012", "STI013", "STI014", "STI015"}
+  pp_adress: {'port1': '0x0378', 'port2': '0x0379', 'port3': '0x037A', 'port4': '0x037B'}   
+
+
+stimulus_pc: 
+  name: "Dell Precision 7920"
+  x_shift: -300
+
+
+projector: 
+  name: "Epson EB-2255U"
+  resolution:
+  refresh_rate:
+  screen_size: 
+
+
+eyelink_system:
+  eyelink_pc: "Dell Precision 7920"
+  eyelink_software: "SR Research Experiment Builder"
+  eyelink_software_version: "2.0.0"
+  calibration: "9 points"
+  sampling_rate: 1000
+  drift_correction: True
+
+
+photodiode:
+  ttl: {"MISC006"}
+
+
+audio_system:
+  name:
+  speakers: "Logitech Z906"
+  headphones: "Sennheiser HD 650"
+  ttl: {"MISC004", "MISC005"}
+
+
+# meg_system: "Elekta Neuromag"
+#   meg_pc: "Dell Precision 7920"
+#   meg_software: "Elekta Neuromag"
+#   meg_software_version: "4.0.0"
+#   digitalization: "ADC-16"
+
+# eeg_system: "BrainProducts ActiChamp" 
+#   eeg_pc: "Dell Precision 7920"
+#   eeg_software: "BrainVision Recorder"
+#   eeg_software_version: "1.23.0001"
