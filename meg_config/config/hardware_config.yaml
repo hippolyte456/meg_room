@@ -1,0 +1,72 @@
+# This file contains the configuration of the hardware used in the lab.
+# Contains all the information potentially needed in the user experiment code file.
+# TODO --> this config could be updated automatically? (hard to do... but partially feasible)
+stimulus_pc:
+  name: "Dell Precision 7920"
+  parallel_ports: 
+    port1: "/dev/parport0"
+    port2: "/dev/parport1"
+    port3: "/dev/parport2"
+    port4: "/dev/parport3"
+  x_shift: -300
+
+
+response_button:
+  used_ports: 
+    - "/dev/parport0"
+    - "/dev/parport1"
+  buttons:
+    - label: "l_red"
+      ttl: "STI012"
+    - label: "l_yellow"
+      ttl: "STI013"
+    - label: "l_green"
+      ttl: "STI014"
+    - label: "l_red"
+      ttl: "STI015"
+    - label: "r_red"
+      ttl: "STI012"
+    - label: "r_yellow"
+      ttl: "STI013"
+    - label: "r_green"
+      ttl: "STI014"
+    - label: "r_red"
+      ttl: "STI015"
+
+
+projector: 
+  name: "Epson EB-2255U"
+  resolution: ~   # Valeur non définie
+  refresh_rate: ~
+  screen_size: ~
+
+eyelink_system:
+  eyelink_pc: "Dell Precision 7920"
+  eyelink_software: "SR Research Experiment Builder"
+  eyelink_software_version: "2.0.0"
+  calibration: "9 points"
+  sampling_rate: 1000
+  drift_correction: true
+
+photodiode:
+  ttl: 
+    - "MISC006"
+
+audio_system:
+  name: ~
+  speakers: "Logitech Z906"
+  headphones: "Sennheiser HD 650"
+  ttl: 
+    - "MISC004"
+    - "MISC005"
+
+meg_system: null  # Si non utilisé, mettre `null` plutôt que commenter tout le bloc
+#   meg_pc: "Dell Precision 7920"
+#   meg_software: "Elekta Neuromag"
+#   meg_software_version: "4.0.0"
+#   digitalization: "ADC-16"
+
+eeg_system: null
+#   eeg_pc: "Dell Precision 7920"
+#   eeg_software: "BrainVision Recorder"
+#   eeg_software_version: "1.23.0001"

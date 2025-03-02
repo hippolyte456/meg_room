@@ -2,23 +2,28 @@
 # -*- coding: utf-8 -*-
 
 import yaml
+import pdb
+import meg_config
 
-import numpy as np
-import pandas as pd
-import expyriment as expy  #control, design, misc, stimuli, io
-from utils.CBandit_parameters import *
-from utils.rand_counter import *
-from utils.ratings import MEG_rating_block
-from utils.seq_gen import SeqGen
-from utils.saver import Saver
-from utils.rand_counter import rd_ct
-from utils.feedback import Feedback as FB
+# import numpy as np
+# import pandas as pd
+# import expyriment as expy  #control, design, misc, stimuli, io
+
+# from utils.CBandit_parameters import *
+# from utils.rand_counter import *
+# from utils.ratings import MEG_rating_block
+# from utils.seq_gen import SeqGen
+# from utils.saver import Saver
+# from utils.rand_counter import rd_ct
+# from utils.feedback import Feedback as FB
 
 
 
-with open('./meg-config/config/hardware.yaml', 'r') as hardware:
-    #TODO...
+config = load_yaml()
     
+pdb.set_trace()
+
+exit(0)
 
 
 # =============================================================================

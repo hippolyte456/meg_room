@@ -5,6 +5,10 @@ TODO cahier des charges à définir avec Fosca
 '''
 
 
+CONFIG_PATH = "/home/hippolytedreyfus/Documents/MEGconfig/meg-config/config/hardware_config.yaml"
+USER_CONFIG_PATH = "/home/hippolytedreyfus/Documents/MEGconfig/meg-config/config/user_config.yaml"
+
+
 import pytest
 import mne
 import yaml
@@ -22,19 +26,26 @@ class meg_neurospin_config(): #Heritage ?
     It is an intermediary class of expyriments with the specific need / hardware setup of neurospin and requires a config file (yaml?)
     '''  
 
-    def __init__(self, config):
-        self.expy = expy # deal with the best way to do it ? what is necessary or not in term of expy integration ?
-        self.parports = MEG_ports()
-        self.cfg = config
+    def __init__(self, hardware_path, user_path):
+        self.hardware_config_path = hardware_path
+        self.user_config_path = user_path
         # récupérer les configs ports parallèles et autres hardwares qui peut changer.
-        self._load_config()
+        self._load_config(self.hardware_config_path)
+        self._load_config(self.user_config_path)
+        
+        self.parports = MEG_ports() #pareil pour eyelink, etc...
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
         
            
-    
-    def _load_config(self):
-        pass
+    def _load_config(self,file_path):
+        """Charge un fichier YAML et retourne son contenu sous forme de dictionnaire."""
+        with open(file_path, "r", encoding="utf-8") as file:
+            try:
+                return yaml.safe_load(file)  # Utiliser `safe_load` pour éviter l'exécution de code arbitraire
+            except yaml.YAMLError as e:
+                print(f"Erreur lors du chargement de {file_path} : {e}")
+                return None
     
     
     def _pytest_config(self):
