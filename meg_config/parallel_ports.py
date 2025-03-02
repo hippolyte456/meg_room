@@ -1,9 +1,7 @@
-import os.path as op
 
-import expyriment
-from expyriment import  io, design
+
+from expyriment import  io
 from expyriment.misc._timer import get_time
-
 
 
 class MEG_ports(object):

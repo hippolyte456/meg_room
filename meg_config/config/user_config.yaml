@@ -1,60 +1,53 @@
-'''
-This is the config file which should be parameterized by the user.
-It contains all the information needed to run the experiment with correct settings.
-''' 
+# This is the config file which should be parameterized by the user.
+# It contains all the information needed to run the experiment with correct settings.
 
 # Paramètres de l'acquisition
 acquisition:
   project: "explore_plus"
-  automatic_settings: "yes"
-    name: "version_2"
-  bids_save: "no"
-  raw_file: 
+  automatic_settings: true
+  name: "version_2"
+  bids_save: false
+  raw_file: null  # Ajout de `null` pour indiquer une valeur non définie
 
 # Configuration générale de l'expérience MEG
 framework:
-  name: expyriment
-  version: 3.14.0
-
+  name: "expyriment"
+  version: "3.14.0"
 
 # Matériel utilisé
 hardware:
-  meg_system: "yes"
-  eeg_system: "no" 
-  eyelink_system: "no"
-  audio_system: "no"
-  projector: "yes"
-  stimulus_pc: "yes"
-  photodiode_channel: "no"
-  response_buttons: "yes"
+  meg_system: true
+  eeg_system: false
+  eyelink_system: false
+  audio_system: false
+  projector: true
+  stimulus_pc: true
+  photodiode_channel: false
+  response_buttons: true
 
-
+# Paramètres des stimuli
 stimulus:
-  audio: "no"
-  visual: "yes"
-    automatic_encoding: "no"
-      encoding_method: "one_to_one"
-    stims: 
-    durationTriggers: 10 
+  audio: false
+  visual: true
+  automatic_encoding: false
+  encoding_method: "one_to_one"
+  stims: []  # Liste vide par défaut, à compléter
+  durationTriggers: 10 
 
-
+# Paramètres des réponses
 response:
-  used_buttons: {'l_red','l_yellow','r_green','r_bue'}
-
-
-
+  used_buttons: ["l_red", "l_yellow", "r_green", "r_blue"]  # Correction de "r_bue" en "r_blue"
 
 # Paramètres de la présentation des stimuli
-# stimuli:
-#   refresh_rate: 60  # Fréquence de rafraîchissement de l’écran (Hz)
-#   cue_duration: 0.5  # Durée du signal cue (en secondes)
-#   feedback_duration: 1.0  # Durée du feedback (en secondes)
-#   jitter_range: [0.5, 1.5]  # Jitter entre essais (en secondes)
+stimuli:
+  refresh_rate: 60  # Fréquence de rafraîchissement de l’écran (Hz)
+  cue_duration: 0.5  # Durée du signal cue (en secondes)
+  feedback_duration: 1.0  # Durée du feedback (en secondes)
+  jitter_range: [0.5, 1.5]  # Jitter entre essais (en secondes)
 
-# # Mapping des événements
-# events:
-#   cue: "STI001"
-#   response: ["STI012", "STI013", "STI014", "STI015"]
-#   feedback: "STI003"
-#   photodiode_threshold: 0.5  # Seuil pour détecter les changements avec la photodiode
-
+# Mapping des événements
+events:
+  cue: "STI001"
+  response: ["STI012", "STI013", "STI014", "STI015"]
+  feedback: "STI003"
+  photodiode_threshold: 0.5  # Seuil pour détecter les changements avec la photodiode

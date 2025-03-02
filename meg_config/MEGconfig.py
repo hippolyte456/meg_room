@@ -5,15 +5,13 @@ TODO cahier des charges à définir avec Fosca
 '''
 
 
-CONFIG_PATH = "/home/hippolytedreyfus/Documents/MEGconfig/meg-config/config/hardware_config.yaml"
-USER_CONFIG_PATH = "/home/hippolytedreyfus/Documents/MEGconfig/meg-config/config/user_config.yaml"
+CONFIG_PATH = "/home/hippolytedreyfus/Documents/meg_config/meg_config/config/hardware_config.yaml"
+USER_CONFIG_PATH = "/home/hippolytedreyfus/Documents/meg_config/meg_config/config/user_config.yaml"
 
 
-import pytest
-import mne
 import yaml
 import expyriment as expy
-from parallel_ports import MEG_ports
+from .parallel_ports import MEG_ports
 
 
 #TODO : se renseigner sur ce qu'ils font à l'ICM : contacter l'ingé qui a surement eu le temps de faire ça ?
@@ -33,7 +31,7 @@ class meg_neurospin_config(): #Heritage ?
         self._load_config(self.hardware_config_path)
         self._load_config(self.user_config_path)
         
-        self.parports = MEG_ports() #pareil pour eyelink, etc...
+        #self.parports = MEG_ports() #pareil pour eyelink, etc...
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
         

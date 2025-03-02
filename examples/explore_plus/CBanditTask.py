@@ -19,7 +19,7 @@ import meg_config
 
 
 
-config = load_yaml()
+# config = load_yaml()
     
 pdb.set_trace()
 
