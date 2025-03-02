@@ -1,0 +1,5 @@
+numpy
+scipy
+
+[dev]
+pytest

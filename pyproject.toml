@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meg_config"       # Nom du package
+version = "0.1.0"         # Numéro de version
+description = "Un package de configuration pour MEG"
+authors = [{name = "Ton Nom", email = "ton.email@example.com"}]
+dependencies = [          # Liste des dépendances
+    "numpy",
+    "scipy"
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]         # Dépendances optionnelles pour le dev
+
+[tool.setuptools]
+packages = ["meg_config"]  # Indique où trouver le code du package
+

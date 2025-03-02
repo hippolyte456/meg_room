@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: meg-config
+Version: 0.1.0
+Summary: Un package de configuration pour MEG
+Author-email: Ton Nom <ton.email@example.com>
+Provides-Extra: dev
