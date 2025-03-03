@@ -7,7 +7,6 @@ stim_pc:
     port1: "/dev/parport0"
     port2: "/dev/parport1"
     port3: "/dev/parport2"
-    port4: "/dev/parport3"
   x_shift: -300
 
 
@@ -19,11 +18,11 @@ response_buttons:
     l_red: "STI012"
     l_yellow: "STI013"
     l_green: "STI014"
-    l_red: "STI015"
+    l_blue: "STI015"
     r_red: "STI012"
     r_yellow: "STI013"
     r_green: "STI014"
-    r_red: "STI015"
+    r_blue: "STI015"
 
 
 eyelink_system:

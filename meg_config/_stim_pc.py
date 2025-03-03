@@ -1,25 +1,14 @@
 
-import os.path as op
-
-from expyriment import  io
+import os
+import time
+from expyriment import design, control, io
 from expyriment.misc._timer import get_time
 # from __future__ import annotations
 
-
-
-class MockPort:
-    """Simule un port parallèle pour le mode développement."""
-    def __init__(self, port_name):
-        self.port_name = port_name
-
-    def read_status(self):
-        print(f"[DEV MODE] Lecture fictive du port {self.port_name}")
-        return 0  # Valeur par défaut pour éviter les erreurs
-
+# TODO il y a pas mal de hardcoding à enelver ? port1, port2, port3, etc. ou avec des tests sur les noms ?
 
 class StimPC:
-    '''TODO: docstring'''
-    
+
     def __init__(self, config, dev_mode=True):
         """
         Initialise l'objet StimPC à partir d'un dictionnaire de configuration.
@@ -28,7 +17,7 @@ class StimPC:
                        Il doit contenir une clé 'parport' avec les numéros de port.
         """
         self.parport = config.get("parport", {})  # Récupère le sous-dictionnaire des ports
-
+        self.config = config
         # Choisir la bonne classe pour les ports
         PortClass = MockPort if dev_mode else io.ParallelPort
         
@@ -49,9 +38,13 @@ class StimPC:
         self.port2_last_value = self.port2_baseline_value
         self.port3_last_value = self.port3_baseline_value
 
-      
+
+    def __repr__(self):
+        return f"StimPC(config={self.config})"
+
+
      
-    def checkResponse(self):
+    def check_response(self):
         '''
         Check if subject responded.
         Return 0 if not; 1 or 2 if they did; and -1 if they clicked ESC
@@ -84,7 +77,7 @@ class StimPC:
         return None
 
 
-    def wait(self,  codes=None, duration=None):
+    def wait_response(self,  codes=None, duration=None):
 
         """Homemade wait for MEG response buttons
 
@@ -102,7 +95,7 @@ class StimPC:
         start = get_time()
         rt = None
         while True:
-            found = self.checkResponse()
+            found = self.check_response()
             if found :
                 rt = int((get_time() - start) * 1000)
                 break
@@ -127,12 +120,35 @@ class StimPC:
         return parallel_ports
 
 
-
     def send_all_triggers(self,):
         '''send 0 to 255 to the parallel port'''
         #creation d'une expérience avec expyriment
-        exp = io.Experiment(name="send_all_triggers")
+        # exp = design.Experiment(name="send_all_triggers")
+        # control.initialize(exp)
+
         # toutes les 50ms, on envoie un trigger
         for i in range(256):
-            self.port1.send_code(i)
-            exp.clock.wait(50)
+            self.port1.send(i)
+            # io.wait(50)
+            # exp.clock.wait(1500)
+            time.sleep(0.05)
+            
+            
+            
+                    
+            
+class MockPort:
+    """Simule un port parallèle pour le mode développement."""
+    def __init__(self, port_name):
+        self.port_name = port_name
+
+    def __repr__(self):
+        return f"MockPort(port_name={self.port_name})"
+    
+    def read_status(self):
+        print(f"[DEV MODE] Lecture fictive du port {self.port_name}")
+        return 0  # Valeur par défaut pour éviter les erreurs
+
+
+    def send(self, value):
+        print(f"[DEV MODE] Envoi de {value} sur {self.port_name}")
