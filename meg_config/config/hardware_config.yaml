@@ -26,12 +26,6 @@ response_buttons:
     r_red: "STI015"
 
 
-projector: 
-  name: "Epson EB-2255U"
-  resolution: ~   # Valeur non définie
-  refresh_rate: ~
-  screen_size: ~
-
 eyelink_system:
   eyelink_pc: "Dell Precision 7920"
   eyelink_software: "SR Research Experiment Builder"
@@ -39,6 +33,15 @@ eyelink_system:
   calibration: "9 points"
   sampling_rate: 1000
   drift_correction: true
+
+
+projector: 
+  name: "Epson EB-2255U"
+  resolution: ~   # Valeur non définie
+  refresh_rate: ~
+  screen_size: ~
+
+
 
 photodiode:
   ttl: 

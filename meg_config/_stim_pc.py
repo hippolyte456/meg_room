@@ -35,42 +35,37 @@ class StimPC(object):
         self.port3_last_value = self.port3_baseline_value
       
      
-    # def checkResponse(self):
-    #     '''
-    #     Check if subject responded.
-    #     Return 0 if not; 1 or 2 if they did; and -1 if they clicked ESC
-    #     '''
-    #     # if userPressedEscape():
-    #     #     return -1
-    #     #-- Check if exactly one button was pressed
+    def checkResponse(self):
+        '''
+        Check if subject responded.
+        Return 0 if not; 1 or 2 if they did; and -1 if they clicked ESC
+        '''
 
-    #     # Here we apply some small tricky correction for port whose return is always non-null
-    #     # TODO check for consistency.
-    #     resp1 = self.port1.read_status() - self.port1_baseline_value
-    #     resp2 = self.port2.read_status() - self.port2_baseline_value
-    #     resp3 = self.port3.read_status() - self.port3_baseline_value
+        resp1 = self.port1.read_status() - self.port1_baseline_value
+        resp2 = self.port2.read_status() - self.port2_baseline_value
+        resp3 = self.port3.read_status() - self.port3_baseline_value
 
-    #     if (resp1 != 0 and resp2 == 0 and resp1 != self.port1_last_value):# and resp3 == 0):
-    #         self.port1_last_value = resp1
-    #         print(f'port1_{resp1 + self.port1_baseline_value}')
-    #         return f'port1_{resp1 + self.port1_baseline_value}'
-    #     if (resp1 == 0 and resp2 != 0 and resp2 != self.port2_last_value):# and resp3 == 0):
-    #         self.port2_last_value = resp2
-    #         print(f'port2_{resp2 + self.port2_baseline_value}')
-    #         return f'port2_{resp2 + self.port2_baseline_value}'
-    #     if (resp1 == 0 and resp2 == 0 and resp3 != 0 and resp3 != self.port3_last_value):
-    #         self.port3_last_value = resp3
-    #         print(f'port3_{resp3 + self.port3_baseline_value}')
-    #         return f'port3_{resp3 + self.port3_baseline_value}'
+        if (resp1 != 0 and resp2 == 0 and resp1 != self.port1_last_value):# and resp3 == 0):
+            self.port1_last_value = resp1
+            print(f'port1_{resp1 + self.port1_baseline_value}')
+            return f'port1_{resp1 + self.port1_baseline_value}'
+        if (resp1 == 0 and resp2 != 0 and resp2 != self.port2_last_value):# and resp3 == 0):
+            self.port2_last_value = resp2
+            print(f'port2_{resp2 + self.port2_baseline_value}')
+            return f'port2_{resp2 + self.port2_baseline_value}'
+        if (resp1 == 0 and resp2 == 0 and resp3 != 0 and resp3 != self.port3_last_value):
+            self.port3_last_value = resp3
+            print(f'port3_{resp3 + self.port3_baseline_value}')
+            return f'port3_{resp3 + self.port3_baseline_value}'
 
-    #     if (resp1 != self.port1_last_value):
-    #         self.port1_last_value = resp1
-    #     if(resp2 != self.port2_last_value):
-    #         self.port2_last_value = resp2
-    #     if(resp3 != self.port3_last_value):
-    #         self.port3_last_value = resp3
+        if (resp1 != self.port1_last_value):
+            self.port1_last_value = resp1
+        if(resp2 != self.port2_last_value):
+            self.port2_last_value = resp2
+        if(resp3 != self.port3_last_value):
+            self.port3_last_value = resp3
 
-    #     return None
+        return None
 
 
     # def wait(self,  codes=None, duration=None):

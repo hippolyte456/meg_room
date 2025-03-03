@@ -10,7 +10,7 @@ class Button:
         return f"Button(label={self.label}, ttl={self.ttl}, status={self.status})"
 
 
-class Buttons:
+class ResponseButtons:
     def __init__(self, buttons_dict):
         self._buttons = {label: Button(label, data["ttl"], data["status"]) for label, data in buttons_dict.items()}
 

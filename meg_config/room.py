@@ -10,13 +10,12 @@ USER_CONFIG_PATH = "/home/hippolytedreyfus/Documents/meg_config/meg_config/confi
 
 
 import yaml
-import expyriment as expy
-from .stim_pc import StimPC
-from .eyetracker import Eyelink
-from .response_buttons import Buttons, Button
+from ._stim_pc import StimPC
+from ._eyetracker import Eyelink
+from ._response_buttons import ResponseButtons
 
 #TODO : se renseigner sur ce qu'ils font à l'ICM : contacter l'ingé qui a surement eu le temps de faire ça ?
-class meg_room(): #Heritage ?
+class MegRoom(): #Heritage ?
     ''' 
     Robust hardware configuration setup for the neurospin meg,
     with a great amount of verbosity, to be usefull to the user just before to start the session.
@@ -32,7 +31,9 @@ class meg_room(): #Heritage ?
         self._load_and_set_attributes(self.hardware_config_path)
         self._load_and_set_attributes(self.user_config_path)
         
-        #self.parports = MEG_ports() #pareil pour eyelink, etc...
+        self.stim_pc = StimPC(self.stim_pc)
+        self.eyetracker = Eyelink(self.eyetracker)
+        self.response_buttons = ResponseButtons(self.response_buttons)
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
         
@@ -71,7 +72,7 @@ class meg_room(): #Heritage ?
         # data quality assessement
         # check de l'environnement python
 
-
+    
     def show_all(self):
         '''Show all the hardware available in the room'''
         def recursive_print(obj, indent=0):
