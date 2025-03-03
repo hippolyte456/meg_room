@@ -1,8 +1,10 @@
 README.md
 pyproject.toml
-meg_config/MEGconfig.py
 meg_config/__init__.py
-meg_config/parallel_ports.py
+meg_config/_eyetracker.py
+meg_config/_response_buttons.py
+meg_config/_stim_pc.py
+meg_config/room.py
 meg_config/utils.py
 meg_config.egg-info/PKG-INFO
 meg_config.egg-info/SOURCES.txt
