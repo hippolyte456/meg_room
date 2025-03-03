@@ -11,11 +11,12 @@ USER_CONFIG_PATH = "/home/hippolytedreyfus/Documents/meg_config/meg_config/confi
 
 import yaml
 import expyriment as expy
-from .parallel_ports import MEG_ports
-
+from .stim_pc import StimPC
+from .eyetracker import Eyelink
+from .response_buttons import Buttons, Button
 
 #TODO : se renseigner sur ce qu'ils font à l'ICM : contacter l'ingé qui a surement eu le temps de faire ça ?
-class meg_neurospin_config(): #Heritage ?
+class meg_room(): #Heritage ?
     ''' 
     Robust hardware configuration setup for the neurospin meg,
     with a great amount of verbosity, to be usefull to the user just before to start the session.
@@ -28,34 +29,36 @@ class meg_neurospin_config(): #Heritage ?
         self.hardware_config_path = hardware_path
         self.user_config_path = user_path
         # récupérer les configs ports parallèles et autres hardwares qui peut changer.
-        self._load_config(self.hardware_config_path)
-        self._load_config(self.user_config_path)
+        self._load_and_set_attributes(self.hardware_config_path)
+        self._load_and_set_attributes(self.user_config_path)
         
         #self.parports = MEG_ports() #pareil pour eyelink, etc...
         # test de tout ce qu'il y a tester avant de lancer une expé
         self._pytest_config()
         
            
-    def _load_config(self,file_path):
-        """Charge un fichier YAML et retourne son contenu sous forme de dictionnaire."""
+    def _load_and_set_attributes(self, file_path):
+        """Charge un fichier YAML et met à jour les attributs de l'instance."""
         with open(file_path, "r", encoding="utf-8") as file:
             try:
-                return yaml.safe_load(file)  # Utiliser `safe_load` pour éviter l'exécution de code arbitraire
+                config_dict = yaml.safe_load(file)
+                if config_dict:
+                    self._dict_to_attributes(self, config_dict)  # Conversion en attributs
             except yaml.YAMLError as e:
                 print(f"Erreur lors du chargement de {file_path} : {e}")
-                return None
-    
-    
-        def _dict_to_attributes(self, config_dict, parent=""):
-            """Transforme récursivement un dictionnaire en attributs de classe."""
-            for key, value in config_dict.items():
-                attr_name = f"{parent}.{key}" if parent else key
-                if isinstance(value, dict):
-                    # Si la valeur est un dictionnaire, on crée un sous-objet pour représenter la hiérarchie
-                    setattr(self, key, type(key, (), {})())  # Crée une classe anonyme
-                    self._dict_to_attributes(value, attr_name)
-                else:
-                    setattr(self, key, value)
+
+
+    def _dict_to_attributes(self, obj, config_dict):
+        """Transforme récursivement un dictionnaire en attributs de l'objet donné."""
+        for key, value in config_dict.items():
+            if isinstance(value, dict):
+                # Si la valeur est un dictionnaire, créer un sous-objet pour conserver la hiérarchie
+                sub_obj = type(key, (), {})()  # Crée un objet vide avec le nom de la clé
+                self._dict_to_attributes(sub_obj, value)  # Remplir récursivement le sous-objet
+                setattr(obj, key, sub_obj)  # Attacher l'objet au parent
+            else:
+                setattr(obj, key, value)  # Attribuer la valeur simple
+                
     
     def _pytest_config(self):
         '''run all tests'''
@@ -67,3 +70,17 @@ class meg_neurospin_config(): #Heritage ?
         # SOFTWARE
         # data quality assessement
         # check de l'environnement python
+
+
+    def show_all(self):
+        '''Show all the hardware available in the room'''
+        def recursive_print(obj, indent=0):
+            for attr, value in obj.__dict__.items():
+                if hasattr(value, "__dict__"):
+                    print("  " * indent + f"{attr}:")
+                    recursive_print(value, indent + 1)
+                else:
+                    print("  " * indent + f"{attr}: {value}")
+        
+        print("MEG Room Configuration:")
+        recursive_print(self)

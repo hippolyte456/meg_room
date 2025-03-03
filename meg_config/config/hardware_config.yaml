@@ -1,9 +1,9 @@
 # This file contains the configuration of the hardware used in the lab.
 # Contains all the information potentially needed in the user experiment code file.
 # TODO --> this config could be updated automatically? (hard to do... but partially feasible)
-stimulus_pc:
+stim_pc:
   name: "Dell Precision 7920"
-  parallel_ports: 
+  parport: 
     port1: "/dev/parport0"
     port2: "/dev/parport1"
     port3: "/dev/parport2"
@@ -11,27 +11,19 @@ stimulus_pc:
   x_shift: -300
 
 
-response_button:
+response_buttons:
   used_ports: 
     - "/dev/parport0"
     - "/dev/parport1"
   buttons:
-    - label: "l_red"
-      ttl: "STI012"
-    - label: "l_yellow"
-      ttl: "STI013"
-    - label: "l_green"
-      ttl: "STI014"
-    - label: "l_red"
-      ttl: "STI015"
-    - label: "r_red"
-      ttl: "STI012"
-    - label: "r_yellow"
-      ttl: "STI013"
-    - label: "r_green"
-      ttl: "STI014"
-    - label: "r_red"
-      ttl: "STI015"
+    l_red: "STI012"
+    l_yellow: "STI013"
+    l_green: "STI014"
+    l_red: "STI015"
+    r_red: "STI012"
+    r_yellow: "STI013"
+    r_green: "STI014"
+    r_red: "STI015"
 
 
 projector: 
