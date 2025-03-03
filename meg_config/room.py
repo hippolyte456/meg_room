@@ -41,9 +41,9 @@ class meg_room(): #Heritage ?
         """Charge un fichier YAML et met à jour les attributs de l'instance."""
         with open(file_path, "r", encoding="utf-8") as file:
             try:
-                config_dict = yaml.safe_load(file)
+                config_dict = yaml.safe_load(file) 
                 if config_dict:
-                    self._dict_to_attributes(self, config_dict)  # Conversion en attributs
+                    self._dict_to_attributes(self, config_dict)  # Conversion en attributs TODO utiliser pydantic !
             except yaml.YAMLError as e:
                 print(f"Erreur lors du chargement de {file_path} : {e}")
 
