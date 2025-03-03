@@ -1,4 +1,8 @@
-..set to dev mode...
+# Meg_room
+
+**Meg_room** is designed to connect the different systems in an experiment room.  
+The user has easy access to hardware configurations, as well as a suite of tests and features to assist with experimentation.
+
 
 # ⚡ **MEG Hardware Configuration Package**  
 

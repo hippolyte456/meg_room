@@ -46,6 +46,17 @@ class meg_neurospin_config(): #Heritage ?
                 return None
     
     
+        def _dict_to_attributes(self, config_dict, parent=""):
+            """Transforme récursivement un dictionnaire en attributs de classe."""
+            for key, value in config_dict.items():
+                attr_name = f"{parent}.{key}" if parent else key
+                if isinstance(value, dict):
+                    # Si la valeur est un dictionnaire, on crée un sous-objet pour représenter la hiérarchie
+                    setattr(self, key, type(key, (), {})())  # Crée une classe anonyme
+                    self._dict_to_attributes(value, attr_name)
+                else:
+                    setattr(self, key, value)
+    
     def _pytest_config(self):
         '''run all tests'''
         pass
