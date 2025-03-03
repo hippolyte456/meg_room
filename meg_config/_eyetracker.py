@@ -7,5 +7,5 @@ class Eyelink(object):
     Class to manage the stimulation PC.
     '''
     
-    def __init__(self):
+    def __init__(self, config):
         pass

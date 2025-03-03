@@ -6,23 +6,38 @@ from expyriment.misc._timer import get_time
 # from __future__ import annotations
 
 
-class StimPC(object):
-    ''' 
-    Class to manage the stimulation PC.
-    '''
-    '''
-    key_exit, rt_exit = exp.keyboard.wait_char(['q'], duration=1)
-    if key_exit:
-        expyriment.control.end('Ending experiment')
-    '''
-    
-    def __init__(self, port1Num, port2Num, port3Num):
-      
 
-        # only works at the MEG. WORKS ONLY IF THE SUBJECT PRESS THE RED BUTTONS ON BOTH RESPON PANELS
-        self.port1 = io.ParallelPort(port1Num)
-        self.port2 = io.ParallelPort(port2Num)
-        self.port3 = io.ParallelPort(port3Num)
+class MockPort:
+    """Simule un port parallèle pour le mode développement."""
+    def __init__(self, port_name):
+        self.port_name = port_name
+
+    def read_status(self):
+        print(f"[DEV MODE] Lecture fictive du port {self.port_name}")
+        return 0  # Valeur par défaut pour éviter les erreurs
+
+
+class StimPC:
+    '''TODO: docstring'''
+    
+    def __init__(self, config, dev_mode=True):
+        """
+        Initialise l'objet StimPC à partir d'un dictionnaire de configuration.
+
+        :param config: Dictionnaire contenant la configuration du StimPC.
+                       Il doit contenir une clé 'parport' avec les numéros de port.
+        """
+        self.parport = config.get("parport", {})  # Récupère le sous-dictionnaire des ports
+
+        # Choisir la bonne classe pour les ports
+        PortClass = MockPort if dev_mode else io.ParallelPort
+        
+        # Vérifie que les ports requis existent
+        self.port1 = PortClass(self.parport.get("port1"))
+        self.port2 = PortClass(self.parport.get("port2"))
+        self.port3 = PortClass(self.parport.get("port3"))
+
+        # Lire les statuts initiaux
         _ = self.port1.read_status()
         _ = self.port2.read_status()
         _ = self.port3.read_status()
@@ -33,6 +48,7 @@ class StimPC(object):
         self.port1_last_value = self.port1_baseline_value
         self.port2_last_value = self.port2_baseline_value
         self.port3_last_value = self.port3_baseline_value
+
       
      
     def checkResponse(self):
@@ -68,47 +84,47 @@ class StimPC(object):
         return None
 
 
-    # def wait(self,  codes=None, duration=None):
+    def wait(self,  codes=None, duration=None):
 
-    #     """Homemade wait for MEG response buttons
+        """Homemade wait for MEG response buttons
 
-    #     Parameters
-    #     ----------
-    #     codes : int or list, optional !!! IS IGNORED AND KEPT ONLY FOR CONSISTENCY WITH THE KEYBOARD METHOD
-    #         bit pattern to wait for
-    #         if codes is not set (None) the function returns for any
-    #         event that differs from the baseline
-    #     duration : int, optional
-    #         maximal time to wait in ms
-    #     no_clear_buffer : bool, optional
-    #         do not clear the buffer (default = False)
-    #     """
-    #     start = get_time()
-    #     rt = None
-    #     while True:
-    #         found = self.checkResponse()
-    #         if found :
-    #             rt = int((get_time() - start) * 1000)
-    #             break
+        Parameters
+        ----------
+        codes : int or list, optional !!! IS IGNORED AND KEPT ONLY FOR CONSISTENCY WITH THE KEYBOARD METHOD
+            bit pattern to wait for
+            if codes is not set (None) the function returns for any
+            event that differs from the baseline
+        duration : int, optional
+            maximal time to wait in ms
+        no_clear_buffer : bool, optional
+            do not clear the buffer (default = False)
+        """
+        start = get_time()
+        rt = None
+        while True:
+            found = self.checkResponse()
+            if found :
+                rt = int((get_time() - start) * 1000)
+                break
 
-    #         if duration is not None:
-    #             if int((get_time() - start) * 1000) > duration:
-    #                 return None, None
+            if duration is not None:
+                if int((get_time() - start) * 1000) > duration:
+                    return None, None
 
-    #     return found, rt
+        return found, rt
 
 
-    # def check_parallel_ports():
-    #     parallel_ports = []
-    #     dev_dir = '/dev/'
+    def check_parallel_ports():
+        parallel_ports = []
+        dev_dir = '/dev/'
 
-    #     # Check common parallel port device files
-    #     for i in range(10):  # Adjust the range based on the expected number of parallel ports
-    #         port = f'parport{i}'
-    #         if os.path.exists(os.path.join(dev_dir, port)):
-    #             parallel_ports.append(os.path.join(dev_dir, port))
+        # Check common parallel port device files
+        for i in range(10):  # Adjust the range based on the expected number of parallel ports
+            port = f'parport{i}'
+            if os.path.exists(os.path.join(dev_dir, port)):
+                parallel_ports.append(os.path.join(dev_dir, port))
 
-    #     return parallel_ports
+        return parallel_ports
 
 
 
