@@ -1,9 +1,0 @@
-Metadata-Version: 2.2
-Name: meg_config
-Version: 0.1.0
-Summary: Un package de configuration pour MEG
-Author-email: Ton Nom <ton.email@example.com>
-Requires-Dist: numpy
-Requires-Dist: scipy
-Provides-Extra: dev
-Requires-Dist: pytest; extra == "dev"

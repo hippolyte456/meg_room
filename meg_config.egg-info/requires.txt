@@ -1,5 +1,0 @@
-numpy
-scipy
-
-[dev]
-pytest
