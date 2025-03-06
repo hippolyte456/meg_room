@@ -5,10 +5,6 @@ TODO cahier des charges à définir avec Fosca
 '''
 
 
-CONFIG_PATH = "/home/hippolytedreyfus/Documents/meg_config/meg_config/config/hardware_config.yaml"
-USER_CONFIG_PATH = "/home/hippolytedreyfus/Documents/meg_config/meg_config/config/user_config.yaml"
-
-
 import yaml
 from ._stim_pc import StimPC
 from ._eyetracker import Eyelink
@@ -34,7 +30,7 @@ class MegRoom(): #Heritage ?
         self.response_buttons = ResponseButtons(self._parse_by_object("response_buttons"))
 
         # Vérification initiale de la configuration
-        self._pytest_config()
+        self._test_hardware()
 
           
     def _load_config(self, file_path):
@@ -50,17 +46,8 @@ class MegRoom(): #Heritage ?
         """Récupère la section spécifique du fichier de configuration."""
         return self.hardware_config.get(key, {})  # Retourne le dictionnaire associé à 'key', ou un dict vide si absent
 
-    # def _parse_by_object(self, key):
-    #     """Récupère la section spécifique du fichier de configuration en fusionnant hardware et user config."""
-    #     config = {}
-    #     if key in self.hardware_config:
-    #         config.update(self.hardware_config[key])
-    #     if key in self.user_config:
-    #         config.update(self.user_config[key])
-    #     return config
 
-
-    def _pytest_config(self):
+    def _test_hardware(self):
         '''run all tests'''
         pass
         #HARDWARE
@@ -81,6 +68,15 @@ class MegRoom(): #Heritage ?
                     recursive_print(value, indent + 1)
                 else:
                     print("  " * indent + f"{attr}: {value}")
+                print('\n')
         
         print("MEG Room Configuration:")
         recursive_print(self)
+
+    
+    def display_all_hardware(self):
+        pass
+    
+    
+    def display_current_config(self):
+        pass

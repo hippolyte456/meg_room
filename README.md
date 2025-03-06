@@ -16,7 +16,7 @@ The four main features of **Meg_room** are presented here.
 - 🔧 **Experiment Configuration Sanity Checks**  
   - Ensures that the hardware is properly connected based on the provided experiment configuration file.  
 
-- 📊 **Assistance for Debugging Hardware Malfunctions**  
+- 🚨 **Assistance for Debugging Hardware Malfunctions**  
   - Helps identify and resolve hardware-related issues during acquisition.  
   - Provides diagnostic tools to quickly detect connection failures or misconfigurations.  
 

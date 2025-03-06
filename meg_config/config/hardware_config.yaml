@@ -7,7 +7,6 @@ stim_pc:
     port1: "/dev/parport0"
     port2: "/dev/parport1"
     port3: "/dev/parport2"
-  x_shift: -300
 
 
 response_buttons:
@@ -36,10 +35,8 @@ eyelink_system:
 
 projector: 
   name: "Epson EB-2255U"
-  resolution: ~   # Valeur non définie
-  refresh_rate: ~
-  screen_size: ~
-
+  refresh_rate: 120
+  x_shift: -300
 
 
 photodiode:
@@ -53,6 +50,8 @@ audio_system:
   ttl: 
     - "MISC004"
     - "MISC005"
+
+
 
 meg_system: null  # Si non utilisé, mettre `null` plutôt que commenter tout le bloc
 #   meg_pc: "Dell Precision 7920"
