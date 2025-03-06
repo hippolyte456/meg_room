@@ -1,8 +1,7 @@
 
-# from __future__ import annotations
 
 
-class Eyelink(object):
+class AudioSystem(object): #To check what is the best heritage!
     ''' '''
     
     def __init__(self, config):
