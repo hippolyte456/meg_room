@@ -2,4 +2,4 @@
 data/
 dist/
 build/
-**/*.egg-info/
+meg_config.egg-info/
