@@ -1,6 +1,8 @@
 
 from itertools import combinations
 
+#TODO fix this !
+
 def hamming_distance(x, y):
     """Calcule la distance de Hamming entre deux nombres binaires."""
     return bin(x ^ y).count("1")

@@ -1,11 +1,15 @@
+'''
+Definition of the StimPC class, which handles the communication with the parallel ports of the StimPC.
+'''
 
 import os
 import time
-from expyriment import design, control, io
+from expyriment import io
 from expyriment.misc._timer import get_time
-# from __future__ import annotations
 
-# TODO il y a pas mal de hardcoding à enelver ? port1, port2, port3, etc. ou avec des tests sur les noms ?
+
+# TODO remove hardocing and see with Fosca how to improve parport related code
+# port1, port2, port3, etc. ou avec des tests sur les noms ?
 
 class StimPC:
 
@@ -21,12 +25,12 @@ class StimPC:
         # Choisir la bonne classe pour les ports
         PortClass = MockPort if dev_mode else io.ParallelPort
         
-        # Vérifie que les ports requis existent
+        # Vérifie que les ports requis existent #TODO the number of PP should not be hardcoded
         self.port1 = PortClass(self.parport.get("port1"))
         self.port2 = PortClass(self.parport.get("port2"))
         self.port3 = PortClass(self.parport.get("port3"))
 
-        # Lire les statuts initiaux
+        # Lire les statuts initiaux #TODO remove ?
         _ = self.port1.read_status()
         _ = self.port2.read_status()
         _ = self.port3.read_status()
@@ -38,14 +42,13 @@ class StimPC:
         self.port2_last_value = self.port2_baseline_value
         self.port3_last_value = self.port3_baseline_value
 
-
+    
     def __repr__(self):
         return f"StimPC(config={self.config})"
 
-
-     
-    def check_response(self):
-        '''
+#-------- RELATED TO RESPONSES BUTTONS --------#   
+    def _check_response(self):
+        ''' By Fosca
         Check if subject responded.
         Return 0 if not; 1 or 2 if they did; and -1 if they clicked ESC
         '''
@@ -77,9 +80,10 @@ class StimPC:
         return None
 
 
-    def wait_response(self,  codes=None, duration=None):
+    def wait_response(self, duration=None):
 
-        """Homemade wait for MEG response buttons
+        """ By Fosca
+        Homemade wait for MEG response buttons
 
         Parameters
         ----------
@@ -95,7 +99,7 @@ class StimPC:
         start = get_time()
         rt = None
         while True:
-            found = self.check_response()
+            found = self._check_response()
             if found :
                 rt = int((get_time() - start) * 1000)
                 break
@@ -107,36 +111,124 @@ class StimPC:
         return found, rt
 
 
-    def check_parallel_ports():
-        parallel_ports = []
-        dev_dir = '/dev/'
+#-------- RELATED TO TRIGGERS --------# 
+    def _get_sending_port(self, device):
+        '''Return the port to send triggers to the MEG'''
+        #TODO detect the port2send automatically
+        return self.port2
+    
+    
+    def _get_read_port(self, device):
+        '''return the adress for reading from the wanted device'''
+        pass
 
-        # Check common parallel port device files
-        for i in range(10):  # Adjust the range based on the expected number of parallel ports
-            port = f'parport{i}'
-            if os.path.exists(os.path.join(dev_dir, port)):
-                parallel_ports.append(os.path.join(dev_dir, port))
+  
+    def send(self, trigger = 255, duration = 5):
+        '''
+        esay sent of triggers to the MEG
+        '''
+        port2send = self._get_sending_port()
+        port2send.send(data = trigger)
+        time.sleep(duration / 1000)
+        # exp.clock.wait(duration) #TODO check with Christophe that this changes is okay ?
+        port2send.send(data = 0) 
+ 
+            
+    def write_response(self):
+        print("Not implemented yet")
+        
+#-------- 3  SOME QUICK DIAGNOSTICS --------# 
+    def find_parports_addresses(self):
+        """
+        Searches for available parallel ports on the system.
+        This function scans the '/dev/' directory for files or directories that contain 'parport' in their names,
+        indicating the presence of parallel ports. It prints the results of the search and returns a list of paths
+        to the detected parallel ports.
+        Returns:
+            list: A list of strings representing the paths to the detected parallel ports. If no parallel ports are found,
+                  an empty list is returned.
+        """
+  
+        dev_dir = '/dev/'
+        parallel_ports = []
+        print("\n🔍 Recherche des ports parallèles disponibles sur le système...")
+
+        try:
+            # Liste tous les fichiers / dossiers dans /dev/
+            dev_files = os.listdir(dev_dir)
+            # Filtrer ceux qui contiennent 'parport'
+            parallel_ports = [os.path.join(dev_dir, f) for f in dev_files if 'parport' in f and os.path.exists(os.path.join(dev_dir, f))]
+        except FileNotFoundError:
+            print(f"❌ Le dossier {dev_dir} n'existe pas sur ce système.")
+            return []
+
+        if parallel_ports:
+            print("\n✅ Ports parallèles trouvés :")
+            for idx, port in enumerate(parallel_ports, 1):
+                print(f"  {idx}. {port}")
+        else:
+            print("\n⚠️ Aucun port parallèle détecté sur ce système.")
 
         return parallel_ports
 
 
-    def send_all_triggers(self,):
-        '''send 0 to 255 to the parallel port'''
-        #creation d'une expérience avec expyriment
-        # exp = design.Experiment(name="send_all_triggers")
-        # control.initialize(exp)
+    def record_pressed_buttons(self):
+        """
+        Interactive function to help the user press each response button.
+        Uses `wait_response` from parent class to capture button addresses.
+        Returns the list of addresses (values) corresponding to each button.
+        """
 
-        # toutes les 50ms, on envoie un trigger
+        print("\n🎮 Please press each response button one by one when prompted.")
+        print("⚠️ Make sure the device is ready and connected.")
+        print("👉 After pressing each button, wait until the system detects it.\n")
+        print("💡 When finished (no more buttons to press), just press 'Enter' to stop.\n")
+
+        recorded_buttons = []
+        button_index = 1
+
+        while True:
+            user_input = input(f"➡️  Press button {button_index} and press 'Enter' to start detection (or 'Enter' empty to finish): ")
+            
+            # If user just presses Enter, we finish
+            if user_input.strip() == '':
+                print("\n🛑 Button recording stopped by user.\n")
+                break
+
+            print("⏳ Waiting for button press...")
+
+            # Here we call the parent's wait_response method to get the button address
+            value = self.wait_response()
+
+            print(f"✅ Button {button_index} recorded with value/address: {value}\n")
+            recorded_buttons.append(value)
+            button_index += 1
+
+        print("\n📝 All recorded button addresses:", recorded_buttons)
+        print("✅ You can now use these addresses to define your button-response mappings.\n")
+
+        return recorded_buttons
+
+
+#-------- 4 - ROBUSTNESS OF THE ACQUISITION --------# 
+    def send_all_triggers(self):
+        '''Send triggers from 0 to 255 to the parallel port, every 50 ms'''
+
+        print("\n⚠️ Please make sure that raw signal recording is running.")
+        input("✅ Press Enter when you are ready to start sending triggers...")
+
+        print("\n🚀 Starting to send triggers from 0 to 255...\n")
+
         for i in range(256):
             self.port1.send(i)
-            # io.wait(50)
-            # exp.clock.wait(1500)
-            time.sleep(0.05)
-            
-            
-            
-                    
-            
+            print(f"Trigger sent: {i}", end='\r')  # Inline print for real-time feedback without flooding
+            time.sleep(0.05)  # 50 ms delay
+
+        print("\n✅ All triggers have been sent successfully.")
+
+           
+
+#FOR DEV MODE                            
 class MockPort:
     """Simule un port parallèle pour le mode développement."""
     def __init__(self, port_name):
@@ -150,5 +242,5 @@ class MockPort:
         return 0  # Valeur par défaut pour éviter les erreurs
 
 
-    def send(self, value):
-        print(f"[DEV MODE] Envoi de {value} sur {self.port_name}")
+    def send(self, data):
+        print(f"[DEV MODE] Envoi de {data} sur {self.port_name}")

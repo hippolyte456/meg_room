@@ -5,6 +5,7 @@ TODO cahier des charges à définir avec Fosca
 '''
 
 
+import pprint
 import yaml
 from ._stim_pc import StimPC
 from ._eyetracker import Eyelink
@@ -47,6 +48,13 @@ class MegRoom(): #Heritage ?
         return self.hardware_config.get(key, {})  # Retourne le dictionnaire associé à 'key', ou un dict vide si absent
 
 
+    def _get_all_hardware():
+        '''This is the function to detect all available hardware connected to the stimulation PC
+        It migt be tricky to design, but ideally this should be the function to call in 
+        _test_hardware() and display_all_hardware()'''
+        pass
+    
+    
     def _test_hardware(self):
         '''run all tests'''
         pass
@@ -59,7 +67,7 @@ class MegRoom(): #Heritage ?
         # check de l'environnement python
 
     
-    def show_all(self):
+    def display_all(self):
         '''Show all the hardware available in the room'''
         def recursive_print(obj, indent=0):
             for attr, value in obj.__dict__.items():
@@ -73,10 +81,17 @@ class MegRoom(): #Heritage ?
         print("MEG Room Configuration:")
         recursive_print(self)
 
-    
+
+    def display_config(self):
+        pprint.pprint(self.hardware_config)
+
+        
+    def display_user_config(self):
+        pprint.pprint(self.user_config)
+
+
     def display_all_hardware(self):
+        '''Should use _get_hardware()'''
         pass
     
     
-    def display_current_config(self):
-        pass

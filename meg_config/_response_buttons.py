@@ -1,4 +1,6 @@
-#TODO...
+'''
+TODO
+'''
 
 class Button:
     def __init__(self, label, data):
@@ -38,7 +40,4 @@ class ResponseButtons:
 
     def __repr__(self):
         return f"ResponseButtons({list(self._buttons.keys())})"
- 
-    
-    def record_pressed_buttons(self):
-        pass
+
