@@ -6,7 +6,7 @@
 
 
 ## 🚀 Features à implémenter
-priorité : import de toutes les configs hardware de la salle
+load_drivers() fr each devices (as suggested by Anne)
 
 ## 🐞 Bugs à corriger
  
