@@ -9,7 +9,7 @@ description = "Un package de configuration pour MEG"
 authors = [
     { name = "Hippolyte Dreyfus", email = "hippolytedryfus@orange.fr" }
 ]
-requires-python = "==3.7"          # Python exactement en version 3.7
+requires-python = ">=3.7"          # Python exactement en version 3.7
 dependencies = [
     "numpy",
     "scipy"
