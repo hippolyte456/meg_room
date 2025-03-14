@@ -2,4 +2,4 @@
 data/
 dist/
 build/
-**/*eeg-info/
+*.egg-info/
