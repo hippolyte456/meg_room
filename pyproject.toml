@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "meg_room"                  # Nom du package corrigé
-version = "0.0.1"                  # Version corrigée pour respecter ton souhait (0.0.1)
+version = "0.0.2"                  # Version corrigée pour respecter ton souhait (0.0.1)
 description = "Un package de configuration pour MEG"
 authors = [
     { name = "Hippolyte Dreyfus", email = "hippolytedryfus@orange.fr" }
