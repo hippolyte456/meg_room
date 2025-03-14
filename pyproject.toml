@@ -3,18 +3,24 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "meg_config"       # Nom du package
-version = "0.1.0"         # Numéro de version
+name = "meg_room"                  # Nom du package corrigé
+version = "0.0.1"                  # Version corrigée pour respecter ton souhait (0.0.1)
 description = "Un package de configuration pour MEG"
-authors = [{name = "Ton Nom", email = "ton.email@example.com"}]
-dependencies = [          # Liste des dépendances
+authors = [
+    { name = "Hippolyte Dreyfus", email = "hippolytedryfus@orange.fr" }
+]
+requires-python = "==3.7"          # Python exactement en version 3.7
+dependencies = [
     "numpy",
     "scipy"
 ]
 
 [project.optional-dependencies]
-dev = ["pytest"]         # Dépendances optionnelles pour le dev
+dev = ["pytest"]                  # Dépendances optionnelles pour le développement
+
+[project.urls]
+Homepage = "https://github.com/hippolyte456/meg_room"
+Repository = "https://github.com/hippolyte456/meg_room"
 
 [tool.setuptools]
-packages = ["meg_config"]  # Indique où trouver le code du package
-
+packages = ["meg_room"]           # Dossier contenant ton code (doit être nommé 'meg_room')

@@ -3,7 +3,7 @@
 
 import yaml
 import pdb
-import meg_config
+import meg_room
 
 # import numpy as np
 # import pandas as pd
