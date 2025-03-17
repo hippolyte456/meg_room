@@ -12,7 +12,9 @@ authors = [
 requires-python = ">=3.7"          # Python exactement en version 3.7
 dependencies = [
     "numpy",
-    "scipy"
+    "scipy",
+    "yaml",
+    # "pyparallel",
 ]
 
 [project.optional-dependencies]
