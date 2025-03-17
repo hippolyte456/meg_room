@@ -13,7 +13,7 @@ from expyriment.misc._timer import get_time
 
 class StimPC:
 
-    def __init__(self, config, dev_mode=True):
+    def __init__(self, config, dev_mode=False):
         """
         Initialise l'objet StimPC à partir d'un dictionnaire de configuration.
 
@@ -112,10 +112,10 @@ class StimPC:
 
 
 #-------- RELATED TO TRIGGERS --------# 
-    def _get_sending_port(self, device):
-        '''Return the port to send triggers to the MEG'''
+    def _get_sending_port(self, device='forp'):
+        '''Return the port to send triggers to the MEG, given a selected hardware'''
         #TODO detect the port2send automatically
-        return self.port2
+        return self.port2 #TODO correctly
     
     
     def _get_read_port(self, device):
@@ -127,11 +127,11 @@ class StimPC:
         '''
         esay sent of triggers to the MEG
         '''
-        port2send = self._get_sending_port()
-        port2send.send(data = trigger)
-        time.sleep(duration / 1000)
-        # exp.clock.wait(duration) #TODO check with Christophe that this changes is okay ?
-        port2send.send(data = 0) 
+        #TODO port2 = self._get_sending_port()
+        print(self.port2)
+        self.port2.send(trigger)
+        time.sleep(duration / 1000)  # exp.clock.wait(duration) #TODO check with Christophe that this changes is okay ?
+        self.port2.send(0) 
  
             
     def write_response(self):
@@ -220,9 +220,10 @@ class StimPC:
         print("\n🚀 Starting to send triggers from 0 to 255...\n")
 
         for i in range(256):
-            self.port1.send(i)
+            self.port2.send(i)
             print(f"Trigger sent: {i}", end='\r')  # Inline print for real-time feedback without flooding
             time.sleep(0.05)  # 50 ms delay
+            self.port2.send(0)
 
         print("\n✅ All triggers have been sent successfully.")
 
