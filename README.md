@@ -4,6 +4,8 @@
 
 **Meg_room** is designed to connect the different systems in an experiment room. The user has easy access to hardware configurations, as well as a suite of tests and features to assist with experimentation.
 
+For a quick introduction example : `examples/megroom_intro.ipynb`.
+Make sure to configure correctly the path of the the room config file and the user config file.
 
 # 🚀 **Features**  
 
