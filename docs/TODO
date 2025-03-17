@@ -4,6 +4,7 @@
 --> Site platforme meg
 --> transférer le folder à une organisation github **NeuroSpin_Acquisition**
 
+Dependencies to add correctly on megroom : yaml etc...
 
 ## 🚀 Features à implémenter
 load_drivers() fr each devices (as suggested by Anne)
