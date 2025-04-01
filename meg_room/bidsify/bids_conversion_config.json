@@ -1,0 +1,771 @@
+{
+  "subjects": [
+    {
+      "id": "ag_170045",
+      "anonymized_id": "840",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1011"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ag_170045/190524/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190522/empty_room.fif",
+      "empty_room_session": "20190522",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20181204/ag170045-6286_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "at_140305",
+      "anonymized_id": "653",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run08.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/run09.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1921", "MEG1933", "MEG2133", "MEG2132", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1921", "MEG1933", "MEG2041", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1921", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1723", "MEG1732", "MEG1921", "MEG1933", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1921", "MEG1933", "MEG2133", "MEG2132", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2133", "MEG2132", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2133", "MEG2132", "MEG2131", "MEG0311"],
+            ["MEG0131", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1921", "MEG1933", "MEG2133", "MEG2132", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/at_140305/190527/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190527/empty_room.fif",
+      "empty_room_session": "20190527",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190626/at140305-6515_001/000014_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "cc_150418",
+      "anonymized_id": "512",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1721", "MEG1933", "MEG2133", "MEG2132", "MEG0311", "MEG0341", "MEG1243"],
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1933", "MEG2133", "MEG0311", "MEG0613", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1933", "MEG1732", "MEG2133", "MEG0311", "MEG0613", "MEG0623"],
+            ["MEG0213", "MEG2621", "MEG0422", "MEG1722", "MEG1723", "MEG1933", "MEG1732", "MEG2133", "MEG0311", "MEG0613", "MEG0623"],
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG1931", "MEG2133", "MEG2132", "MEG0311", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG2133", "MEG2132", "MEG0311", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG2133", "MEG2132", "MEG0311", "MEG0623", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG2621", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG2133", "MEG2132", "MEG0311", "MEG0623", "MEG0613", "MEG1243"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/cc_150418/190507/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190507/emptyRoom_1638.fif",
+      "empty_room_session": "20190507",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20151207/cc150418-4939_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "cg_190026",
+      "anonymized_id": "788",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943", "MEG1221"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943", "MEG1221"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943", "MEG1221"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943", "MEG1221"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/cg_190026/190520/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190520/empty_room.fif",
+      "empty_room_session": "20190520",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190128/cg190026-6344_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "dh_180324",
+      "anonymized_id": "197",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1432", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0123", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1432", "MEG1441", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0123", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1441", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0123", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG1942", "MEG2321", "MEG0311", "MEG0543"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG1942", "MEG0311", "MEG0613"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG1942", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG1723", "MEG1732", "MEG1933", "MEG1942", "MEG0311", "MEG0611"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/dh_180324/190528/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190528/empty_room.fif",
+      "empty_room_session": "20190528",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190528/dh180324-6484_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "dp_150209",
+      "anonymized_id": "778",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/ru03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/run08.fif"
+          ],
+          "bads": [
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/dp_150209/190614/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190614/empty_room.fif",
+      "empty_room_session": "20190614",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190619/dp150209-6505_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "eb_180237",
+      "anonymized_id": "693",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG0311", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1243"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/eb_180237/190514/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190514/empty_room.fif",
+      "empty_room_session": "20190514",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20181127/eb180237-6277_001/000025_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "ep_190335",
+      "anonymized_id": "972",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG2542", "MEG2132", "MEG0311", "MEG0521"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG2542", "MEG0311", "MEG0521"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG2542", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG2542", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG0311", "MEG1031"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1741", "MEG1933", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ep_190335/190618/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190618/empty_room.fif",
+      "empty_room_session": "20190618",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190604/ep190335-6491_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "fr_190151",
+      "anonymized_id": "930",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943", "MEG1031"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943", "MEG1031"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943", "MEG1031"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943", "MEG1031"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0522", "MEG0542", "MEG0943"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/fr_190151/190517/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190517/empty_room.fif",
+      "empty_room_session": "20190517",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190522/fr190151-6473_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "ga_180461",
+      "anonymized_id": "155",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run03real.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG2121", "MEG0311", "MEG0541", "MEG0613"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG2121", "MEG0311", "MEG0541", "MEG0613"],
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613"],
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0541", "MEG0613"],
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613"],
+            ["MEG0131", "MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1011"],
+            ["MEG0131", "MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1011"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ga_180461/190516/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190516/empty_room.fif",
+      "empty_room_session": "20190516",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190516/ga180461-6463_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "hf_190144",
+      "anonymized_id": "240",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG2231", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/hf_190144/190524/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190522/empty_room.fif",
+      "empty_room_session": "20190522",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190527/hf190144-6481_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "hm_070076",
+      "anonymized_id": "748",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run03real.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1433", "MEG0633", "MEG1722", "MEG1723", "MEG1933", "MEG2341", "MEG0311", "MEG0931"],
+            ["MEG0213", "MEG1433", "MEG0633", "MEG1722", "MEG1723", "MEG1933", "MEG0311", "MEG0931"],
+            ["MEG0213", "MEG1433", "MEG0633", "MEG1722", "MEG1723", "MEG1933", "MEG0311", "MEG0931"],
+            ["MEG0213", "MEG2432", "MEG0633", "MEG1433", "MEG1722", "MEG1723", "MEG1933", "MEG0311", "MEG0931"],
+            ["MEG0213", "MEG1341", "MEG0633", "MEG1722", "MEG1723", "MEG1933", "MEG0311"],
+            ["MEG0213", "MEG1433", "MEG0633", "MEG2211", "MEG1341", "MEG1722", "MEG1723", "MEG1933", "MEG0311"],
+            ["MEG0213", "MEG1433", "MEG0633", "MEG1341", "MEG1722", "MEG1723", "MEG1933", "MEG0311"],
+            ["MEG0213", "MEG1433", "MEG0633", "MEG1341", "MEG1722", "MEG1723", "MEG1933", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/hm_070076/190503/RestingState.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190503/empty_room.fif",
+      "empty_room_session": "20190503",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190731/hm070076-6565_001/000016_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "lc_190090",
+      "anonymized_id": "368",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/run08.fif"
+          ],
+          "bads": [
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0331"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG2411", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0331"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311", "MEG0331"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0331"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG2411", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311", "MEG0331"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG2411", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311", "MEG0331"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG2411", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/lc_190090/190613/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190613/empty_room.fif",
+      "empty_room_session": "20190613",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190613/lc190090-6498_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "ld_190260",
+      "anonymized_id": "220",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run01real.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG2521", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG2521", "MEG0311", "MEG0542", "MEG0943"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ld_190260/190520/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190520/empty_room.fif",
+      "empty_room_session": "20190520",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190520/ld190260-6466_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "lq_180242",
+      "anonymized_id": "558",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1512", "MEG1441", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG1512", "MEG1441", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2041", "MEG2131", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG1512", "MEG1441", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2041", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG1512", "MEG1441", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2041", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2041", "MEG0311", "MEG0543", "MEG1031"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543", "MEG1031"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"],
+            ["MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0543"]            
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/lq_180242/190527/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190527/empty_room.fif",
+      "empty_room_session": "20190527",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20191016/lq180242-6623_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "lr_190095",
+      "anonymized_id": "529",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311", "MEG0541"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311", "MEG0541"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311", "MEG0541", "MEG1031"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311", "MEG1031"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/lr_190095/190620/empty_room.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190620/empty_room.fif",
+      "empty_room_session": "20190620",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190603/lr190095-6490_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "ml_180010",
+      "anonymized_id": "215",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run08.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/run09.fif"
+          ],
+          "bads": [
+            ["MEG0142", "MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG0712", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311", "MEG0513"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG0713", "MEG1723", "MEG1732", "MEG1933", "MEG0311"],
+            ["MEG0142", "MEG0213", "MEG1512", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2141", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ml_180010/190613/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190613/empty_room.fif",
+      "empty_room_session": "20190613",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20180116/ml180010-5890_001/000004_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "ml_180195",
+      "anonymized_id": "644",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run04real.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"],
+            ["MEG0213", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0943"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ml_180195/190522/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190522/empty_room.fif",
+      "empty_room_session": "20190522",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190703/ml180195-6525_001/000014_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "ml_180318",
+      "anonymized_id": "519",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"],
+            ["MEG0213", "MEG1521", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG0943"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/ml_180318/190521/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190521/empty_room.fif",
+      "empty_room_session": "20190521",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190521/ml180318-6469_001/000002_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "og_170145",
+      "anonymized_id": "486",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1732", "MEG1933", "MEG0311", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG0741", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG0311", "MEG0623", "MEG1243"],
+            ["MEG0213", "MEG2432", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1733", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG2432", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1733", "MEG1933", "MEG0311", "MEG0613", "MEG1243"],
+            ["MEG0213", "MEG2432", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1733", "MEG1933", "MEG2133", "MEG2132", "MEG0311", "MEG1243"],
+            ["MEG0213", "MEG2432", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1733", "MEG1933", "MEG0311", "MEG1243"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/og_170145/190515/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190514/empty_room.fif",
+      "empty_room_session": "20190514",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20181018/og170145-6223_001/000018_mprage-sag-T1-160sl-iPat2"
+    },
+    {
+      "id": "rz_180350",
+      "anonymized_id": "358",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2031", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2031", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2031", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2031", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"],
+            ["MEG0213", "MEG1512", "MEG1513", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2132", "MEG2133", "MEG0311"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/rz_180350/190619/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190619/empty_room.fif",
+      "empty_room_session": "20190619",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20190625/rz180350-6514_001/000016_mprage-sag-T1-160sl"
+    },
+    {
+      "id": "sf_180213",
+      "anonymized_id": "231",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run08.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/run09.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG2343", "MEG0311", "MEG0531", "MEG0821", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1732", "MEG1933", "MEG1731", "MEG2343", "MEG0311", "MEG0531", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1731", "MEG1933", "MEG2343", "MEG0311", "MEG0531", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1731", "MEG1933", "MEG2343", "MEG0311", "MEG0531", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1731", "MEG1933", "MEG2343", "MEG0311", "MEG0531", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1731", "MEG1933", "MEG2343", "MEG0311", "MEG0531", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1731", "MEG1933", "MEG2343", "MEG0311", "MEG1243"],
+            ["MEG0213", "MEG0633", "MEG1722", "MEG1723", "MEG1731", "MEG1933", "MEG2343", "MEG0311", "MEG1243"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/sf_180213/190509/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190509/empty_room.fif",
+      "empty_room_session": "20190509",
+      "t1_dicom_path": ""
+    },
+    {
+      "id": "tr_180110",
+      "anonymized_id": "263",
+      "tasks": [
+        {
+          "name": "tiwm",
+          "paths": [
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run01.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run02.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run03.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run04.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run05.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run06.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run07.fif",
+            "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/run08.fif"
+          ],
+          "bads": [
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0522", "MEG0542", "MEG0943", "MEG1031"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0522", "MEG0542", "MEG0943", "MEG1031"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG1443", "MEG2411", "MEG2611", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"],
+            ["MEG0213", "MEG2411", "MEG0633", "MEG1723", "MEG1732", "MEG1933", "MEG2512", "MEG0311", "MEG0542", "MEG0943"]
+          ]
+        }
+      ],
+      "rest_path": "/neurospin/acquisition/neuromag/data/wm_time/tr_180110/190520/resting_state.fif",
+      "empty_room_path": "/neurospin/acquisition/neuromag/data/wm_time/empty_room/190520/empty_room.fif",
+      "empty_room_session": "20190520",
+      "t1_dicom_path": "/neurospin/acquisition/database/Prisma_fit/20180704/tr180110-6124_001/000002_mprage-sag-T1-160sl"
+    }
+  ],
+  "meg": {
+    "crosstalk_path": "/neurospin/meg/meg_tmp/TimeInWM_Izem_2019/SSS/ct_sparse_nspn.fif",
+    "finecal_path": "/neurospin/meg/meg_tmp/TimeInWM_Izem_2019/SSS/sss_cal_nspn.dat"
+  },
+  "anonymization": {
+    "anonymize": false,
+    "daysback": 35151
+  }
+}
