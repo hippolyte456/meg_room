@@ -58,13 +58,8 @@ class MegRoom(): #Heritage ?
     def _test_hardware(self):
         '''run all tests'''
         pass
-        #HARDWARE
-        # test port parallèles 
-        # test des boutons réponses 
-        # test de la bonne connexion et synchro de tous les equipements
-        # SOFTWARE
-        # data quality assessement
-        # check de l'environnement python
+        #HARDWARE testing (port parallèles, boutons réponses, connexion et synchro de tous les equipements)
+        # SOFTWARE testing (data quality assessement, check de l'environnement python)
 
     
     def display_all(self):
